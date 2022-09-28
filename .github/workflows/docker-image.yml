@@ -29,18 +29,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}  # 配置dockerhub的认证，在Github项目主页 【Settings】 -> 【Secrets】 添加对应变量
           password: ${{ secrets.GHCR_TOKEN }}
-   
-      #- name: tag
-      #  run: docker tag kingbase:v8r3 ghcr.io/haloking/kingbase:v8r3
-        
-      #- name: Push to ghcr Hub
-      #  run: docker push ghcr.io/haloking/kingbase:v8r3
         
       - name: Push to ghcr Hub
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ghcr.io/haloking/kingbase:v8r3
+          tags: ghcr.io/kingbase:v8r3
         
   dockerhub:
     #选择云端运行的环境
