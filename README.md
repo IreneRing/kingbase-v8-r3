@@ -23,10 +23,10 @@ tree ./ -L 1
 0 directories, 8 files
 ```
 
-## 拉取镜像 (直接使用上传仓库的景象)
+## 拉取镜像 (直接使用上传仓库的镜像)
 
 ```bash
-
+docker pull haloking/kingbase:v8r3
 ```
 
 ## 构建镜像
