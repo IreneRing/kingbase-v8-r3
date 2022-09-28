@@ -42,11 +42,14 @@ jobs:
     
     steps: # 一个job由一个或多个step组成
       - name: Log in to ghcr Hub
-        uses: docker/login-action@v2  # 三方的action操作， 执行docker login
+        uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}  # 配置dockerhub的认证，在Github项目主页 【Settings】 -> 【Secrets】 添加对应变量
           password: ${{ secrets.GHCR_TOKEN }}
-
-      - name: Push to ghcr Hub
-        run: docker push ghcr.io/${{ github.repository_owner }}/kingbase:v8r3
+   
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          push: true
+          tags: ${{ github.repository_owner }}/kingbase:v8r3
