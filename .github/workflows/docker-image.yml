@@ -49,4 +49,4 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
    
       - name: Push to Docker Hub
-        run: docker push haloking/kingbase:v8r3
+        run: docker push kingbase:v8r3
