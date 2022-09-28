@@ -22,23 +22,20 @@ jobs:
   ghcr:
     #选择云端运行的环境
     runs-on: ubuntu-latest # job运行的基础环境
-    
-    permissions:
-      packages: write-all
-    
+  
     steps: # 一个job由一个或多个step组成
       - name: Log in to ghcr Hub
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}  # 配置dockerhub的认证，在Github项目主页 【Settings】 -> 【Secrets】 添加对应变量
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GHCR_TOKEN }}
         
       - name: Push to ghcr Hub
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ghcr.io/haloking/kingbase:v8r3
+          tags: ghcr.io/eazonziu/kingbase:v8r3
         
   dockerhub:
     #选择云端运行的环境
