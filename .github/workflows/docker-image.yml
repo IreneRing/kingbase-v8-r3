@@ -26,4 +26,4 @@ jobs:
              
     - name: Push Image
       run: |
-        docker push haloking/kingbase:v8r3
+        docker push kingbase:v8r3
