@@ -14,8 +14,9 @@ jobs:
     runs-on: ubuntu-latest # job运行的基础环境
 
     steps: # 一个job由一个或多个step组成
+      - uses: actions/checkout@v3
+      
       - name: Build the Docker image
-        uses: actions/checkout@v3
         run: sh build.sh
   
   dockerhub:
