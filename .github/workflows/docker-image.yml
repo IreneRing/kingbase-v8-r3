@@ -42,8 +42,8 @@ jobs:
     runs-on: ubuntu-latest # job运行的基础环境
 
     steps: # 一个job由一个或多个step组成
-      - name: Log in to ghcr Hub
-        uses: docker/login-action@v2  # 三方的action操作， 执行docker login
+      - name: Login to GitHub Package Registry
+        uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
