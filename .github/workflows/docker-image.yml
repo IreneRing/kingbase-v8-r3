@@ -18,9 +18,13 @@ jobs:
       
       - name: Build the Docker image
         run: sh build.sh
+        
   ghcr:
     #选择云端运行的环境
     runs-on: ubuntu-latest # job运行的基础环境
+    
+    permissions:
+      packages: write
     
     steps: # 一个job由一个或多个step组成
       - name: Log in to ghcr Hub
