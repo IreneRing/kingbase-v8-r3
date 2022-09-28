@@ -25,8 +25,15 @@ tree ./ -L 1
 
 ## 拉取镜像 (直接使用上传仓库的镜像)
 
+## Dockerhub
+
 ```bash
 docker pull haloking/kingbase:v8r3
+```
+## Github
+
+```bash
+docker pull ghcr.io/eazonziu/kingbase:v8r3
 ```
 
 ## 构建镜像
