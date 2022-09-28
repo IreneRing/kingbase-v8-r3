@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest # job运行的基础环境
     
     permissions:
-      packages: create
+      packages: read|write|none
     
     steps: # 一个job由一个或多个step组成
       - name: Log in to ghcr Hub
