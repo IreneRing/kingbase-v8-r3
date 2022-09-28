@@ -34,6 +34,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
+          platforms: linux/amd64,linux/arm64/v8
           tags: haloking/kingbase:v8r3
           
   ghcr:
@@ -44,11 +45,13 @@ jobs:
       - name: Log in to ghcr Hub
         uses: docker/login-action@v2  # 三方的action操作， 执行docker login
         with:
-          username: ${{ github.repository_owner }} 
-          password: ${{ secrets.GHCR_USERNAME }}
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Push to ghcr Hub
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: EazonZiu/kingbase:v8r3       
+          platforms: linux/amd64,linux/arm64/v8
+          tags: EazonZiu/kingbase:v8r3    
